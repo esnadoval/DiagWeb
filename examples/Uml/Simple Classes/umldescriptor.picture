@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tooldef>
+    <palette>
+        <tool elementId="class" thumbnail="./shapes/umlclass.svg" name="Clase"></tool>
+        <tool elementId="association" thumbnail="./shapes/line1.svg" name="Asociacion"></tool>
+        <tool elementId="extension" thumbnail="./shapes/line1.svg" name="Extension"></tool>
+        <tool elementId="label" thumbnail="./shapes/label.svg" name="Label"></tool>
+    </palette>
+    <descriptor> 
+  
+        <shape type="box2" id="class" img="./shapes/umlclass.svg" parent="undefined" x="mx - (100 / 2)" y="my - (100 / 2)" w="150" h="200" wrpolice="sw" hrpolice="sh" xmpolice="sx"  ympolice="sy" resizeFlg="0" element="Class" fill="rgba(0,0,0,0.7)"> 
+            <childsElements> 
+                <shape type="textbox" id="sub1" delete="false" parent="0" separator=" " rect="true" align="CENTER" font="12px Arial" forecolor="false" img="null" x="px+4" y="py+4" w="pw-8" h="(ph/9)-8" wrpolice="pw-8" hrpolice="(ph/9)-8" xmpolice="px+4"  ympolice="py+4" resizeFlg="3" element="Class" fill="rgba(0,0,0,0.7)"> 
+                    <words> 
+                        <word title="name" text="Title"></word> 
+                    </words> 
+                </shape> 
+                <shape type="flowbox" stmode = "1" id="sub1" parent="0" showRect="false" align="LEFT" img="null" deleteable="false" x="px+4" y="py+(ph/9)+ 4" w="pw-8" h="(ph-(ph/9))-8" wrpolice="pw-8" hrpolice="(ph-(ph/9))-8" xmpolice="px+4"  ympolice="py+(ph/9)+ 4" resizeFlg="3" element="Class" fill="rgba(0,0,0,0.7)"> 
+                    <childsElements> </childsElements> 
+                </shape> 
+            </childsElements> 
+        </shape> 
+        <shape type="link" id="association" p1rel="clasess" p2rel="clasess" dash="false" fill="rgba(0,0,0,0.7)" w="3" arrowStyle="1" arrowSize="10" arrowColor="no" element="Assosiation"> 
+            <pone>
+                <point x="mx" y="my"> </point>
+            </pone>
+            <ptwo>
+                <point x="mx+50" y="my"> </point>
+            </ptwo>
+            <bendpoints> </bendpoints>
+        </shape> 
+        <shape type="link" id="extension" p1rel="eclasess" p2rel="eclasess" dash="false" fill="rgba(0,0,0,0.7)" w="3" arrowStyle="1" arrowSize="10" arrowColor="white" element="Extension"> 
+            <pone>
+                <point x="mx" y="my"> </point>
+            </pone>
+            <ptwo>
+                <point x="mx+50" y="my"> </point>
+            </ptwo>
+            <bendpoints> </bendpoints>
+        </shape> 
+        <shape type="textbox" id="Atribute" delete="true" parent="2" separator=" " rect="true" align="CENTER" font="12px Arial" forecolor="undefined" img="null" x="px+4" y="px+4" w="pw-8" h="(ph/9)-8" wrpolice="pw-8" hrpolice="(ph/9)-8" xmpolice="px+4"  ympolice="py+4" resizeFlg="3" element="Atribute" fill="rgba(0,0,0,0.7)"> 
+            <words> 
+                <word title="visibility" text="private"></word> 
+                <word title="type" text="int"></word> 
+                <word title="name" text="name"></word> 
+            </words> 
+        </shape> 
+        <shape type="textbox" id="Method" delete="true" parent="2" separator=" " rect="true" align="CENTER" font="12px Arial" forecolor="undefined" img="null" x="px+4" y="px+4" w="pw-8" h="(ph/9)-8" wrpolice="pw-8" hrpolice="(ph/9)-8" xmpolice="px+4"  ympolice="py+4" resizeFlg="3" element="Method" fill="rgba(0,0,0,0.7)"> 
+            <words> 
+                <word title="visibility" text="private"></word> 
+                <word title="type" text="int"></word> 
+                <word title="name" text="method"></word>
+                <word title="params" text="()"></word> 
+            </words> 
+        </shape>  
+        <shape type="box2" id="label" img="./shapes/blank.svg" parent="undefined" x="mx - (50 / 2)" y="my - (30 / 2)" w="50" h="30" wrpolice="sw" hrpolice="sh" xmpolice="sx"  ympolice="sy" resizeFlg="0" element="Label" fill="rgba(0,0,0,0.7)"> 
+            <childsElements> 
+                <shape type="textbox" id="sub1" delete="false" parent="0" separator=" " rect="true" align="CENTER" font="12px Arial" forecolor="false" img="null" x="px+4" y="py+4" w="pw-8" h="ph-8" wrpolice="pw-8" hrpolice="ph-8" xmpolice="px+4"  ympolice="py+4" resizeFlg="3" element="Label" fill="rgba(0,0,0,0.7)"> 
+                    <words> 
+                        <word title="name" text="label"></word> 
+                    </words> 
+                </shape> 
+                 
+            </childsElements> 
+        </shape>  
+    </descriptor>
+</tooldef>

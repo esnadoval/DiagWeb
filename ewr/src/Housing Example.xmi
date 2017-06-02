@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simpleclases:Model xmi:version="http://www.omg.org/XMI" xmlns:xmi="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simpleclases="http://simpleclases/1.0" xsi:schemaLocation="http://simpleclases/1.0 simpleclases.ecore"><mclasses id="555"  name="Residencia" atributes="12 13" methods="14 15 44 45"/>
+<mAtributes id="12"  visibility="private" type="String" name="placa"/>
+<mAtributes id="13"  visibility="private" type="String" name="direccion"/>
+<mMethods id="14"  visibility="public" type="String" name="getDireccion" params="()"/>
+<mMethods id="15"  visibility="public" type="String" name="getPlaca" params="()"/>
+<mMethods id="44"  visibility="public" type="void" name="setDireccion" params="(String direccion)"/>
+<mMethods id="45"  visibility="public" type="String" name="setPlaca" params="(String placa)"/>
+<mclasses id="19"  name="Apartamento" atributes="41 42" methods="43"/>
+<mAtributes id="41"  visibility="private" type="boolean" name="duplex"/>
+<mAtributes id="42"  visibility="private" type="int" name="piso"/>
+<mMethods id="43"  visibility="public" type="" name="Apartamento" params="(boolean duplex, int piso)"/>
+<mclasses id="6"  name="Habitante" atributes="36 37 38" methods="40"/>
+<mAtributes id="36"  visibility="private" type="String" name="cedula"/>
+<mAtributes id="37"  visibility="private" type="String" name="nombre"/>
+<mAtributes id="38"  visibility="private" type="String" name="edad"/>
+<mMethods id="40"  visibility="public" type="" name="Habitante" params="(String cedula, String nombre, String edad)"/>
+<mLabels id="31"  name="habitantes"/>
+<mLabels id="29"  name="*"/>
+<mclasses id="3"  name="Casa" atributes="10 33" methods="34 35 39"/>
+<mAtributes id="10"  visibility="private" type="boolean" name="sotano"/>
+<mAtributes id="33"  visibility="private" type="boolean" name="atico"/>
+<mMethods id="34"  visibility="public" type="boolean" name="conSotano" params="()"/>
+<mMethods id="35"  visibility="public" type="boolean" name="conAtico" params="()"/>
+<mMethods id="39"  visibility="public" type="" name="Casa" params="(boolean sotano, boolean atico)"/>
+<mAsossiations id="27" clasess="6 555"/>
+<mExtensions id="25" eclasess="555 19"/>
+<mExtensions id="24" eclasess="555 3"/>
+
+</simpleclases:Model>

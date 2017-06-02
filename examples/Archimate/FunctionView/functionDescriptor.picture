@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tooldef>
+    <palette>
+        <tool elementId="function" thumbnail="./shapes/function.svg" name="Funcion"></tool>
+        <tool elementId="actor" thumbnail="./shapes/actor.svg" name="Actor"></tool>
+  
+        <tool elementId="link" thumbnail="./shapes/line2.svg" name="Relacion"></tool>
+
+        <tool elementId="label" thumbnail="./shapes/label.svg" name="Label"></tool>
+  
+    </palette>
+    <descriptor> 
+     <shape type="box2" id="label" img="./shapes/blank.svg" parent="undefined" x="mx - (50 / 2)" y="my - (30 / 2)" w="50" h="30" wrpolice="sw" hrpolice="sh" xmpolice="sx"  ympolice="sy" resizeFlg="0" element="Label" fill="rgba(0,0,0,0.7)"> 
+            <childsElements> 
+                <shape type="textbox" id="sub1" delete="false" parent="0" separator=" " rect="true" align="CENTER" font="12px Arial" forecolor="false" img="null" x="px+4" y="py+4" w="pw-8" h="ph-8" wrpolice="pw-8" hrpolice="ph-8" xmpolice="px+4"  ympolice="py+4" resizeFlg="3" element="Label" fill="rgba(0,0,0,0.7)"> 
+                    <words> 
+                        <word title="name" text="label"></word> 
+                    </words> 
+                </shape> 
+                 
+            </childsElements> 
+        </shape>
+        <shape type="box2" id="function" img="./shapes/box.svg" parent="undefined" x="mx - (100 / 2)" y="my - (100 / 2)" w="180" h="90" wrpolice="sw" hrpolice="sh" xmpolice="sx"  ympolice="sy" resizeFlg="0" element="Function" fill="rgba(0,0,0,0.7)"> 
+            <childsElements> 
+                <shape type="textbox" id="sub1" delete="false" parent="0" separator=" " rect="true" align="CENTER" font="12px Arial" forecolor="false" img="null" x="px+4" y="py+4" w="pw-8" h="ph-8" wrpolice="pw-8" hrpolice="ph-8" xmpolice="px+4"  ympolice="py+4" resizeFlg="3" element="Function" fill="rgba(0,0,0,0.7)"> 
+                    <words> 
+                        <word title="name" text="funcName"></word> 
+                    </words> 
+                </shape> 
+                <shape type="flowbox" stmode = "1" id="sub1" parent="0" showRect="false" align="LEFT" img="./shapes/function.svg" deleteable="false" x="px+(pw-50)+4" y="py+ 4" w="30" h="20" wrpolice="30" hrpolice="20" xmpolice="px+(pw-50)+4"  ympolice="py+ 4" resizeFlg="3" element="Function" fill="rgba(0,0,0,0.7)"> 
+                    <childsElements> </childsElements> 
+                </shape> 
+            </childsElements> 
+        </shape> 
+    
+        <shape type="box2" id="actor" img="./shapes/box.svg" parent="undefined" x="mx - (100 / 2)" y="my - (100 / 2)" w="180" h="200" wrpolice="sw" hrpolice="sh" xmpolice="sx"  ympolice="sy" resizeFlg="0" element="Role" fill="rgba(0,0,0,0.7)"> 
+            <childsElements> 
+                <shape type="textbox" id="sub1" delete="false" parent="0" separator=" " rect="true" align="CENTER" font="12px Arial" forecolor="false" img="null" x="px+4" y="py+4" w="pw- 70" h="ph/9" wrpolice="pw-70" hrpolice="ph/9" xmpolice="px+4"  ympolice="py+4" resizeFlg="3" element="Role" fill="rgba(0,0,0,0.7)"> 
+                    <words> 
+                        <word title="name" text="roleName"></word> 
+                    </words> 
+                </shape> 
+                <shape type="flowbox" stmode = "1" id="sub1" parent="0" showRect="false" align="LEFT" img="./shapes/actor.svg" deleteable="false" x="px+(pw-50)+4" y="py+ 4" w="30" h="30" wrpolice="30" hrpolice="30" xmpolice="px+(pw-50)+4"  ympolice="py+ 4" resizeFlg="3" element="Role" fill="rgba(0,0,0,0.7)"> 
+                    <childsElements> </childsElements> 
+                </shape> 
+            </childsElements> 
+        </shape> 
+        <shape type="link" id="link" p1rel="funciones,actores" p2rel="funciones,actores" dash="true" fill="rgba(0,0,0,0.7)" w="3" arrowStyle="1" arrowSize="5" arrowColor="black" element="Relation"> 
+            <pone>
+                <point x="mx" y="my"> </point>
+            </pone>
+            <ptwo>
+                <point x="mx+50" y="my"> </point>
+            </ptwo>
+            <bendpoints> </bendpoints>
+        </shape> 
+        
+   
+    </descriptor>
+</tooldef>

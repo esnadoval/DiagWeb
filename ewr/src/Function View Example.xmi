@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functionsview:Model xmi:version="http://www.omg.org/XMI" xmlns:xmi="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:functionsview="http://functionsview/1.0" xsi:schemaLocation="http://functionsview/1.0 functionsview.ecore"><roles id="65"  name="Customer's Bank"/>
+<labels id="84"  name="insurance premiums"/>
+<labels id="80"  name="claims info"/>
+<labels id="76"  name="Insurances Info"/>
+<labels id="68"  name="Contracts"/>
+<labels id="49"  name="customer Information"/>
+<labels id="45"  name="customer info"/>
+<roles id="555"  name="Intermediary"/>
+<roles id="3"  name="Insurer" hasLabels="51 53 55 59 57 61 63" hasFunctions="9 12 21 15 18 24"/>
+<labels id="51"  name="customer Information"/>
+<labels id="53"  name="insurance polices"/>
+<labels id="55"  name="insurance polices"/>
+<labels id="59"  name="money"/>
+<labels id="57"  name="money"/>
+<labels id="61"  name="claims"/>
+<labels id="63"  name="claims"/>
+<functions id="9"  name="Mantaining Intermedary Relations"/>
+<functions id="12"  name="Contracting"/>
+<functions id="21"  name="Asset Management"/>
+<functions id="15"  name="Mantaining Customer Relations"/>
+<functions id="18"  name="Claims Handling"/>
+<functions id="24"  name="Financial Handling"/>
+<labels id="43"  name="product Info"/>
+<labels id="47"  name="product Information"/>
+<roles id="6"  name="Customer"/>
+<labels id="78"  name="claims"/>
+<labels id="82"  name="claim payments"/>
+<relations id="70" funciones="15" actores="6"/>
+<relations id="71" actores="6" funciones="15"/>
+<relations id="73" actores="6" funciones="18"/>
+<relations id="74" actores="65" funciones="24"/>
+<relations id="75" funciones="24" actores="65"/>
+<relations id="39" actores="6 555"/>
+<relations id="38" actores="555 6"/>
+<relations id="35" funciones="18 12"/>
+<relations id="37" funciones="24 21"/>
+<relations id="36" funciones="21 24"/>
+<relations id="29" actores="555" funciones="9"/>
+<relations id="31" funciones="12 9"/>
+<relations id="33" funciones="24 18"/>
+<relations id="34" funciones="18 15"/>
+<relations id="30" funciones="12" actores="555"/>
+<relations id="27" funciones="9" actores="555"/>
+<relations id="32" funciones="24 12"/>
+
+</functionsview:Model>

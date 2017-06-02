@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<functionsview:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:functionsview="http://functionsview/1.0" xsi:schemaLocation="http://functionsview/1.0 functionsview.ecore">
+  <functions id="1"/>
+  <functions id="2"/>
+  <functions name="ds" id="3"/>
+  <roles hasFunctions="3 1 2" id="4"/>
+  <roles id="5"/>
+</functionsview:Model>

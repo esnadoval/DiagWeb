@@ -1,0 +1,720 @@
+﻿<!-- saved from url=(0052)http://simonsarris.com/project/canvasdemo/demo2.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <!-- The usual google analytics -->
+            <link href="css/start/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+                <link href="css/men.css" rel="stylesheet" type="text/css" />
+                <link rel="stylesheet" href="css/demos.css">
+
+                    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+                    <script src="js/jquery-1.9.1.js"></script>
+
+                    <script src="js/jquery-ui-1.10.3.custom.js"></script>
+
+                    <script type="text/javascript" src="js/webpict.mmparser.js"></script>
+
+                    <script type="text/javascript" src="js/webpict.ui.js"></script>
+
+                    <script type="text/javascript" src="js/webpict.ui.ctxmenu.js"></script>
+
+                    <script src="js/jquery.ui.position.js" type="text/javascript"></script>
+
+                    <script src="js/jquery.contextMenu.js" type="text/javascript"></script>
+
+                    <link rel="stylesheet" href="css/themes/base/jquery.ui.all.css">
+
+                        <script src="js/jquery.ui.core.js"></script>
+
+                        <script src="js/jquery.ui.widget.js"></script>
+
+                        <script src="js/jquery.ui.button.js"></script>
+
+                        <script src="js/jquery.ui.mouse.js"></script>
+
+                        <script src="js/jquery.ui.button.js"></script>
+
+                        <script src="js/jquery.ui.draggable.js"></script>
+
+                        <script src="js/jquery.ui.position.js"></script>
+
+                        <script src="js/jquery.ui.resizable.js"></script>
+
+                        <script src="js/jquery.ui.button.js"></script>
+
+                        <script src="js/jquery.ui.dialog.js"></script>
+
+                        <script src="js/jquery.ui.effect.js"></script>
+
+                        <script src="js/base64Enc.js"></script>
+
+                        <script>
+                            $(function() {
+                                var iconst = {
+                                    header: "ui-icon-wrench",
+                                    activeHeader: "ui-icon-wrench"
+                                };
+
+                                var iconsm = {
+                                    header: "ui-icon-pencil",
+                                    activeHeader: "ui-icon-pencil"
+                                };
+
+                                var iconsl = {
+                                    header: "ui-icon-note",
+                                    activeHeader: "ui-icon-note"
+                                };
+                                $("#tl").accordion({
+                                    heightStyle: "fill",
+                                    icons: iconst
+
+                                });
+                                $("#edit").accordion({
+                                    heightStyle: "fill",
+                                    icons: iconsm
+
+                                });
+                                $("#log").accordion({
+                                    collapsible: true,
+                                    heightStyle: "fill",
+                                    icons: iconsl
+                                });
+
+
+
+                                var availableTags = [
+                                    "ActionScript",
+                                    "AppleScript",
+                                    "Asp",
+                                    "BASIC",
+                                    "C",
+                                    "C++",
+                                    "Clojure",
+                                    "COBOL",
+                                    "ColdFusion",
+                                    "Erlang",
+                                    "Fortran",
+                                    "Groovy",
+                                    "Haskell",
+                                    "Java",
+                                    "JavaScript",
+                                    "Lisp",
+                                    "Perl",
+                                    "PHP",
+                                    "Python",
+                                    "Ruby",
+                                    "Scala",
+                                    "Scheme"
+                                ];
+                                $("#autocomplete").autocomplete({
+                                    source: availableTags
+                                });
+
+
+
+                                $("#button").button();
+                                $("#radioset").buttonset();
+
+
+
+                                $("#tabs").tabs({
+                                    heightStyle: "fill",
+                                    icons: iconsl
+                                });
+
+
+
+
+
+
+                                $("#datepicker").datepicker({
+                                    inline: true
+                                });
+
+
+
+                                $("#slider").slider({
+                                    range: true,
+                                    values: [17, 67]
+                                });
+
+
+
+                                $("#progressbar").progressbar({
+                                    value: 100
+                                });
+
+
+                                // Hover states on the static widgets
+                                $("#dialog-link, #icons li").hover(
+                                        function() {
+                                            $(this).addClass("ui-state-hover");
+                                        },
+                                        function() {
+                                            $(this).removeClass("ui-state-hover");
+                                        }
+                                );
+                            });
+
+                            $(function() {
+
+                                $("#open").button({
+                                    text: false,
+                                    icons: {
+                                        primary: "ui-icon-folder-open"
+                                    }
+                                });
+                                $("#save").button({
+                                    text: false,
+                                    icons: {
+                                        primary: "ui-icon-disk"
+                                    }
+                                });
+
+
+
+                                $("#settings").button({
+                                    text: false,
+                                    icons: {
+                                        primary: "ui-icon-gear"
+                                    }
+                                });
+                                $("#clear").button({
+                                    text: false,
+                                    icons: {
+                                        primary: "ui-icon-document"
+                                    }
+                                });
+
+                            });
+                            function refreshLog(info, num) {
+                                document.getElementById('lg').innerHTML = info;
+                                document.getElementById('rtl').innerHTML = "Validaciones: Errores (" + num + ").";
+                            }
+                            function refreshOverview(base64code) {
+
+                                $("#overv").removeAttr("src");
+                                $("#overv").attr("src", base64code);
+                            }
+                            function refreshPropBoard(props, title) {
+
+                                document.getElementById('prpt').innerHTML = "Propiedades de "+title;
+                                document.getElementById('tabs-2').innerHTML = props;
+                            }
+                            $(function() {
+                                var name = $("#name"),
+                                        email = $("#email"),
+                                        password = $("#password"),
+                                        allFields = $([]).add(name).add(email).add(password),
+                                        tips = $(".validateTips");
+
+                                function updateTips(t) {
+                                    tips
+                                            .text(t)
+                                            .addClass("ui-state-highlight");
+                                    setTimeout(function() {
+                                        tips.removeClass("ui-state-highlight", 1500);
+                                    }, 500);
+                                }
+
+                                function checkLength(o, n, min, max) {
+                                    if (o.val().length > max || o.val().length < min) {
+                                        o.addClass("ui-state-error");
+                                        updateTips("Length of " + n + " must be between " +
+                                                min + " and " + max + ".");
+                                        return false;
+                                    } else {
+                                        return true;
+                                    }
+                                }
+
+                                function checkRegexp(o, regexp, n) {
+                                    if (!(regexp.test(o.val()))) {
+                                        o.addClass("ui-state-error");
+                                        updateTips(n);
+                                        return false;
+                                    } else {
+                                        return true;
+                                    }
+                                }
+                                function saveImageAs() {
+                                    var imgOrURL;
+
+
+
+                                    window.win = open(document.getElementById("canvas2").toDataURL());
+                                    setTimeout('win.document.execCommand("SaveAs")', 0);
+                                }
+
+
+                                $("#dialog-new").dialog({
+                                    autoOpen: false,
+                                    height: 300,
+                                    width: 300,
+                                    modal: true,
+                                    buttons: {
+                                        "Aceptar": function() {
+                                            try
+                                            {
+                                                var conf = confirm("Se descartará el modelo actual. Desea continuar?");
+                                                if (conf == true) {
+
+                                                    clearModel();
+
+
+                                                    loadMetamodel(document.getElementById('mm'));
+                                                    loadDescriptor(document.getElementById('pic'));
+                                                    //procesarEcore(document.getElementById('mm'));                                 
+
+
+
+                                                    $("#open").removeAttr("disabled");
+                                                    $("#save").removeAttr("disabled");
+                                                    $("#export").removeAttr("disabled");
+                                                    $("#settings").removeAttr("disabled");
+                                                    $("#clear").removeAttr("disabled");
+                                                    $("#exportxmi").removeAttr("disabled");
+                                                    $(this).dialog("close");
+                                                }
+                                            }
+                                            catch (err)
+                                            {
+                                                alert("Error al cargar el editor. Revise que los archivos de entrada sean los correctos.")
+                                            }
+
+
+                                        },
+                                        "Cancelar": function() {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    close: function() {
+                                        allFields.val("").removeClass("ui-state-error");
+                                    }
+                                });
+                                $("#dialog-open").dialog({
+                                    autoOpen: false,
+                                    height: 300,
+                                    width: 300,
+                                    modal: true,
+                                    buttons: {
+                                        "Aceptar": function() {
+                                            var conf = confirm("Se descartará el modelo actual. Desea continuar?");
+                                            if (conf == true) {
+
+                                                clearModel();
+                                                loadFileModel(document.getElementById('filop'));
+                                                //procesarEcore(document.getElementById('mm'));                                 
+
+
+                                                $(this).dialog("close");
+                                            }
+                                        },
+                                        "Cancelar": function() {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    close: function() {
+                                        allFields.val("").removeClass("ui-state-error");
+                                    }
+                                });
+                                $("#dialog-export").dialog({
+                                    autoOpen: false,
+                                    height: 300,
+                                    width: 300,
+                                    modal: true,
+                                    buttons: {
+                                        "Aceptar": function() {
+                                            loadFileModel(document.getElementById('filop'));
+                                            //procesarEcore(document.getElementById('mm'));                                 
+
+
+                                            $(this).dialog("close");
+
+                                        },
+                                        "Cancelar": function() {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    close: function() {
+                                        allFields.val("").removeClass("ui-state-error");
+                                    }
+                                });
+                                $("#dialog-options").dialog({
+                                    autoOpen: false,
+                                    height: 300,
+                                    width: 300,
+                                    modal: true,
+                                    buttons: {
+                                        "Aceptar": function() {
+
+                                            setCanvasSize(document.getElementById('canvasw').value, document.getElementById('canvash').value);
+                                            modelname = document.getElementById('nam').value;
+                                            document.getElementById('mdlname').innerHTML = modelname;
+                                            $(this).dialog("close");
+
+                                        }
+                                    },
+                                    close: function() {
+                                        allFields.val("").removeClass("ui-state-error");
+                                    }
+                                });
+
+
+                                $("#new")
+                                        .button()
+
+                                        .click(function() {
+                                            $("#dialog-new").dialog("open");
+                                        });
+                                $("#new").css({width: '100px'});
+                                $("#open")
+                                        .button()
+
+                                        .click(function() {
+                                            $("#dialog-open").dialog("open");
+                                        });
+                                $("#open").attr("disabled", "disabled");
+                                $("#clear").button().click(function() {
+                                    var conf = confirm("Está seguro de descartar el modelo actual?");
+                                    if (conf == true) {
+
+                                        clearModel();
+
+                                    }
+                                });
+                                $("#save")
+                                        .button()
+                                        .click(function() {
+                                            saveTextAsFile(modelname + ".mpicture", persistModel());
+                                        });
+                                $("#save").attr("disabled", "disabled");
+                                $("#export")
+                                        .button()
+                                        .click(function() {
+                                            saveImageAs();
+                                        });
+                                $("#exportxmi")
+                                        .button()
+                                        .click(function() {
+                                            saveTextAsFile(modelname + ".xmi", xmiModel());
+                                        });
+
+                                $("#export").button({
+                                    text: false,
+                                    icons: {
+                                        primary: "ui-icon-image"
+                                    }
+                                });
+                                $("#export").attr("disabled", "disabled");
+                                $("#exportxmi").button({
+                                    text: false,
+                                    icons: {
+                                        primary: "ui-icon-script"
+                                    }
+                                });
+                                $("#exportxmi").attr("disabled", "disabled");
+
+                                $("#settings")
+                                        .button()
+                                        .click(function() {
+
+                                            document.getElementById('canvasw').value = getCanvasW();
+                                            document.getElementById('canvash').value = getCanvasH();
+                                            document.getElementById('nam').value = modelname;
+                                            $("#dialog-options").dialog("open");
+                                        });
+
+                                $("#settings").attr("disabled", "disabled");
+                                $("#clear").attr("disabled", "disabled");
+
+
+                            });
+
+                            function loadModelOptions() {
+                                document.getElementById('canvasw').value = getCanvasW();
+                                document.getElementById('canvash').value = getCanvasH();
+                                document.getElementById('nam').value = modelname;
+                                setCanvasSize(document.getElementById('canvasw').value, document.getElementById('canvash').value);
+                                modelname = document.getElementById('nam').value;
+                                document.getElementById('mdlname').innerHTML = modelname;
+
+                            }
+
+                            function createPalette(htmlPalette) {
+                                document.getElementById('pal').innerHTML = htmlPalette;
+                            }
+                        </script>
+
+                        <style>
+                            body
+                            {
+                                font: 62.5% "Trebuchet MS" , sans-serif;
+                                margin: 10px;
+                            }
+                            .demoHeaders
+                            {
+                                margin-top: 2em;
+                            }
+                            #dialog-link
+                            {
+                                padding: .4em 1em .4em 20px;
+                                text-decoration: none;
+                                position: relative;
+                            }
+                            #dialog-link span.ui-icon
+                            {
+                                margin: 0 5px 0 0;
+                                position: absolute;
+                                left: .2em;
+                                top: 50%;
+                                margin-top: -8px;
+                            }
+                            #icons
+                            {
+                                margin: 0;
+                                padding: 0;
+                            }
+                            #icons li
+                            {
+                                margin: 2px;
+                                position: relative;
+                                padding: 4px 0;
+                                cursor: pointer;
+                                float: left;
+                                list-style: none;
+                            }
+                            #icons span.ui-icon
+                            {
+                                float: left;
+                                margin: 0 4px;
+                            }
+                            .fakewindowcontain .ui-widget-overlay
+                            {
+                                position: absolute;
+                            }
+                            label, input
+                            {
+                                display: block;
+                            }
+                            input.text
+                            {
+                                margin-bottom: 12px;
+                                width: 95%;
+                                padding: .4em;
+                            }
+                            fieldset
+                            {
+                                padding: 0;
+                                border: 0;
+                                margin-top: 25px;
+                            }
+                            h1
+                            {
+                                font-size: 1.2em;
+                                margin: .6em 0;
+                            }
+                            div#users-contain
+                            {
+                                width: 350px;
+                                margin: 20px 0;
+                            }
+                            div#users-contain table
+                            {
+                                margin: 1em 0;
+                                border-collapse: collapse;
+                                width: 100%;
+                            }
+                            div#users-contain table td, div#users-contain table th
+                            {
+                                border: 1px solid #eee;
+                                padding: .6em 10px;
+                                text-align: left;
+                            }
+                            .ui-dialog .ui-state-error
+                            {
+                                padding: .3em;
+                            }
+                            .validateTips
+                            {
+                                border: 1px solid transparent;
+                                padding: 0.3em;
+                            }
+                            .float-left
+                            {
+                                float: left;
+                                width: 15%;
+                                height: 80%;
+                            }
+                            .float-right
+                            {
+                                float: left;
+                                width: 85%;
+                                height: 80%;
+                            }
+                            .float-bot
+                            {
+                                float: left;
+                                width: 100%;
+                                height: 15%;
+                            }
+                        </style>
+                        <meta charset="UTF-8">
+                            <title>Web Picture</title>
+                            <!-- A border on the canvas helps us see the edges -->
+                            </head>
+                            <body onload="init2()">
+                                <div id="dialog-new" class="dialog" title="Cargar Editor">
+                                    <p class="validateTips">
+                                        Por favor cargar los siguientes archivos</p>
+                                    <form>
+                                        <fieldset>
+                                            <label for="name">
+                                                Metamodelo (.ecore)</label>
+                                            <input type="file" name="mm" id="mm" value="Clic para Abrir" class="text ui-widget-content ui-corner-all"
+                                                   readonly='true' onmouseover="this.style.cursor = 'pointer'" />
+                                            <label for="email">
+                                                Tool Definition (.picture)</label>
+                                            <input type="file" name="pic" id="pic" value="Clic para Abrir" class="text ui-widget-content ui-corner-all"
+                                                   readonly='true' onmouseover="this.style.cursor = 'pointer'" />
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div id="dialog-open" class="dialog" title="Abrir Modelo">
+                                    <p class="validateTips">
+                                        Cargue el archivo donde se encuentra el modelo.</p>
+                                    <form>
+                                        <fieldset>
+                                            <label for="name">
+                                                Modelo (.mpicture)</label>
+                                            <input type="file" name="mm" id="filop" value="Clic para Abrir" class="text ui-widget-content ui-corner-all"
+                                                   readonly='true' onmouseover="this.style.cursor = 'pointer'" />
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div id="dialog-options" class="dialog" title="Opciones del Modelo">
+                                    <p class="validateTips">
+                                        Tamaño y nombre.</p>
+                                    <form>
+                                        <fieldset>
+                                            <label for="nam">
+                                                Nombre del modelo</label>
+                                            <input type="text" name="nam" id="nam" value="" class="text ui-widget-content ui-corner-all"
+                                                   <label for="name">
+                                                    Ancho</label>
+                                                <input type="text" name="canvasw" id="canvasw" value="" class="text ui-widget-content ui-corner-all"
+                                                       />
+                                                <label for="email">
+                                                    Alto</label>
+                                                <input type="text" name="canvash" id="canvash" value="" class="text ui-widget-content ui-corner-all"
+                                                       />
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div id="dialog-export" class="dialog" title="Exportar a Imagen">
+                                    <p class="validateTips">
+                                        Seleccione el destino de la imagen</p>
+                                    <form>
+                                        <fieldset>
+                                            <label for="name">
+                                                Bitmap image (.bmp)</label>
+                                            <input type="file" name="mm" id="export" value="Clic para Abrir" class="text ui-widget-content ui-corner-all"
+                                                   readonly='true' onmouseover="this.style.cursor = 'pointer'" />
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div id="toolbar" align="center" valign="bottom" width="100%" height="25" class="ui-widget-header ui-corner-all">
+                                    <table width="100%" height="25" border="0">
+                                        <tr>
+                                            <td align="left" valign="middle">
+                                                <button id="new" onclick="">
+                                                    <img style ="height:'15px'" src="img/appicon.svg"/></button>
+                                                <button id="clear" >
+                                                    Nuevo Modelo</button>
+                                                <button id="open">
+                                                    Abrir Modelo</button>
+                                                <button id="save">
+                                                    Guardar Modelo</button>
+
+                                            </td>
+                                            <td align="right" valign="middle">
+                                                <button id="exportxmi">
+                                                    Exportar modelo a xmi</button>
+                                                <button id="export">
+                                                    Exportar Modelo a imagen</button>
+                                                <button id="settings">
+                                                    Opciones del Modelo</button>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div align="left" class="float-left">
+                                    <div id="tl">
+                                        <h3>
+                                            Elementos</h3>
+                                        <div id = "pal">
+
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div  height="85%" align="left" class="float-right">
+                                    <div id="edit">
+                                        <h3>
+                                            <div id="mdlname">Sin Titulo</div>
+                                        </h3>
+                                        <div id="container2">
+                                            <section id="noninteractive">
+
+                                                <canvas id="canvas2"   width="1300" height="630">
+                                                    This text is displayed if your browser does not support HTML5 Canvas.
+                                                </canvas>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <table  class="float-bot">
+                                    <tr>
+                                        <td style="width: 85%; height: 15%;">
+                                            <div id="tabs" >
+                                                <ul>
+                                                    <li><a href="#tabs-1"><div id ="rtl" >Validaciones: Errores (0).</div></a></li>
+                                                    <li><a href="#tabs-2"><div id ="prpt" >Propiedades.</div></a></li>
+
+
+                                                </ul>
+                                                <div id="tabs-1"> 
+
+                                                    <div id="lg">
+
+                                                    </div>
+
+                                                </div>
+                                                <div id="tabs-2" style="overflow-y:scroll; height:15px;">
+
+                                                   
+
+
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td style="width: 15%; height: 15%;">
+                                            <div style="border: 1px solid lightgray; border-radius:5px;" align="center">
+                                                <img  id="overv"  width="150px" height="80px"/>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+
+
+
+
+                            </body>
+                            </html>

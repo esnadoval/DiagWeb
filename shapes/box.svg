@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" style="vector-effect: non-scaling-stroke;">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+
+ <g>
+  <title>Layer 1</title>
+  <rect ry="11" rx="11" id="svg_1" height="476.999989" width="638.000009" y="1" x="1" stroke-width="2" stroke="#000000" fill="#ffffaa"/>
+  <rect id="svg_2" height="216" width="190" y="773" x="1151" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+  <path id="svg_4" d="m1447.228516,986.972656c0,7.181458 -26.182251,12.996399 -58.494751,12.996399m58.494751,-12.996399l0,0c0,7.181458 -26.182251,12.996399 -58.494751,12.996399c-32.3125,0 -58.505249,-5.814941 -58.505249,-12.996399m0,0l0,0c0,-7.172546 26.192749,-13.011536 58.505249,-13.011536c32.3125,0 58.494751,5.838989 58.494751,13.011536l0,51.990601c0,7.18457 -26.182251,13.00354 -58.494751,13.00354c-32.3125,0 -58.505249,-5.81897 -58.505249,-13.00354l0,-51.990601z" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#000000" fill="#ffffaa"/>
+ </g>
+</svg>
